@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<File Name="test.xml">
+    <Data Name="sandra" Num="0">
+        <Definition>
+            <String Val="Hallo wie gehts? " />
+        </Definition>
+        <Numbers>
+            <Int Num="42" />
+        </Numbers>
+    </Data>
+    <Data Name="lars" Num="0">
+        <Definition />
+        <Numbers />
+    </Data>
+</File>

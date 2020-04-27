@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<File Name="config.xml">
+    <Data Name="StartUp" Num="0">
+        <Definition>
+            <String Val="How many frames should the simulation wait " />
+            <String Val="until the replay of this file begins." />
+        </Definition>
+        <Numbers>
+            <Int Num="250" />
+        </Numbers>
+    </Data>
+    <Data Name="CameraZ" Num="0">
+        <Definition>
+            <String Val="Camera height in percent of height one." />
+        </Definition>
+        <Numbers>
+            <Int Num="200" />
+        </Numbers>
+    </Data>
+    <Data Name="RotationSpeed" Num="0">
+        <Definition>
+            <String Val="RotationSpeed (0 means disabled, normal 30)" />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+        </Numbers>
+    </Data>
+    <Data Name="CameraRadius" Num="0">
+        <Definition>
+            <String Val="CameraRadius" />
+        </Definition>
+        <Numbers>
+            <Int Num="6" />
+        </Numbers>
+    </Data>
+    <Data Name="balanceBody" Num="0">
+        <Definition>
+            <String Val="Auto-Balance body (1=yes, 0=no)" />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+        </Numbers>
+    </Data>
+    <Data Name="followWithCamera" Num="0">
+        <Definition>
+            <String Val="followWithCamera (1=yes, 0=no)" />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+        </Numbers>
+    </Data>
+    <Data Name="AutoMaxiumumForce" Num="0">
+        <Definition>
+            <String Val="Auto-Balance Maxiumum Force (%) (10 is a possibility)" />
+        </Definition>
+        <Numbers>
+            <Int Num="10" />
+        </Numbers>
+    </Data>
+    <Data Name="AutoVelocityFactor" Num="0">
+        <Definition>
+            <String Val="Auto-Balance Velocity Factor (10 is a possibility)" />
+        </Definition>
+        <Numbers>
+            <Int Num="10" />
+        </Numbers>
+    </Data>
+    <Data Name="MaxiumumForce" Num="0">
+        <Definition>
+            <String Val="Maximum Force in the joint motors (%)  e.g. 1600 or only 11!" />
+        </Definition>
+        <Numbers>
+            <Int Num="20" />
+        </Numbers>
+    </Data>
+    <Data Name="Velocity" Num="0">
+        <Definition>
+            <String Val="Requested Velocity in the joint motors (%)" />
+        </Definition>
+        <Numbers>
+            <Int Num="900" />
+        </Numbers>
+    </Data>
+    <Data Name="FrictionForce" Num="0">
+        <Definition>
+            <String Val="FrictionForce (divided by 1000, promille)" />
+        </Definition>
+        <Numbers>
+            <Int Num="2" />
+        </Numbers>
+    </Data>
+</File>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,491 @@
+// Separate source file because of C++ limitation in the handling of templates
+
+/**
+ * Returns the maximum value of the two given numbers. 
+ */
+template <class T>
+T Helper::getMax (const T & a, const T & b) {
+  T result;
+  result = (a>b)? a : b;
+  return (result);
+}
+
+/**
+ * Converts the first parameter into the format of the second parameter. 
+ * C++ streams are used. 
+ * In case of an error the function prints a message. 
+ */
+template <class in_value, class out_value>
+void Helper::convert( const in_value & ival, out_value & oval) {
+    stringstream ss;
+    ss << ival; // insert value into stream
+    ss >> oval; // get value from stream
+
+    if (! ss.eof()) {
+        // conversion error
+        stringstream errs;
+				/*
+        errs << "conversion of "
+            << ival << " to "
+            << typeid(oval).name() << " failed";
+				*/
+        cerr << "ConversionException!" << endl;
+    }
+}
+
+/**
+ * Useful to print numbers in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ */
+template <class T>
+void Helper::echo(const T & d1) {
+	cout << inRow(d1);
+}
+
+/**
+ * Useful to print numbers in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ */
+template <class T>
+void Helper::echo(const T & d1, const T & d2) {
+	echo(d1);
+	cout << "; ";
+	echo(d2);
+}
+
+/**
+ * Useful to print numbers in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ */
+template <class T>
+void Helper::echo(const T & d1, const T & d2, const T & d3) {
+	echo(d1);
+	cout << "; ";
+	echo(d2);
+	cout << "; ";
+	echo(d3);
+}
+
+/**
+ * Useful to print numbers in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ */
+template <class T>
+void Helper::echo(const vector<T> & d) {
+	for (unsigned i=0; i<d.size(); i++) {
+		echo(d.at(i));
+	}
+	cout << "; ";
+}
+
+/**
+ * Useful to print numbers in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ * After printing the numbers the cursor is set to a new line. 
+ */
+template <class T>
+void Helper::echoBr(const T & d1) {
+	echo(d1);
+	cout << endl;
+}
+
+/**
+ * Useful to print numbers in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ * After printing the numbers the cursor is set to a new line. 
+ */
+template <class T>
+void Helper::echoBr(const T & d1, const T & d2) {
+	echo(d1,d2);
+	cout << endl;
+}
+
+/**
+ * Useful to print numbers in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ * After printing the numbers the cursor is set to a new line. 
+ */
+template <class T>
+void Helper::echoBr(const T & d1, const T & d2, const T & d3) {
+	echo(d1,d2,d3);
+	cout << endl;
+}
+
+/**
+ * Useful to print numbers in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ * After printing the numbers the cursor is set to a new line. 
+ */
+template <class T>
+void Helper::echoBr(const vector<T> & d) {
+	echo(d);
+	cout << endl;
+}
+
+/**
+ * Useful to format numbers into a string in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ */
+template <class T>
+string Helper::inRow(const T & in) {
+	stringstream interm;
+	string out;
+	interm << in;
+	interm >> out;
+	string retVal;
+	retVal.clear();
+	if (out.size()+1 > echoMax) {
+		echoMax = out.size()+1;
+	}
+	for (int i=0; i<echoMax-out.size(); ++i) {
+		retVal += " ";
+	}
+	retVal += out;
+	return retVal;
+}
+
+/**
+ * Useful to format numbers into a string in an aligned form. 
+ * Length differencies are padded with space characters. 
+ * The default width can be set using the setRowWidth function. 
+ */
+template <class T>
+string Helper::inRow(const T & in, const int & width) {
+	echoMax = width;
+	return inRow(in);
+}
+
+/**
+ * Static helper method.
+ * Returns the absoulute value of the given float value.
+ */
+template <class T>
+T Helper::abs(const T & f) {
+	if (f < 0) {
+		return -f;
+	}
+	return f;
+}
+
+/**
+ * Static helper method.
+ * Returns a string containing a textual representation of the given float variable.
+ */
+template <class T>
+string Helper::toString(const T & in) {
+	string retVal;
+	convert(in,retVal);
+	return retVal;
+}
+
+/**
+ * Static helper method.
+ * Returns true if a given vector already has the given element.
+ */
+template <class T>
+bool Helper::has(const vector<T> & in, const T & el) {
+	for (unsigned i=0; i<in.size(); i++) {
+		if (in.at(i) == el) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
+ * Static helper method.
+ * Returns the position of the given element in the vector.
+ */
+template <class T>
+int Helper::locate(const vector<T> & in, const T & el) {
+	for (unsigned i=0; i<in.size(); i++) {
+		if (in.at(i) == el) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+/**
+ * Static helper method.
+ * Returns the given integer vector sorted in increasing order.
+ * The used method is an insertion sort algorithm. 
+ */
+template <class T>
+vector<T> Helper::sort(const vector<T> & in) {
+	vector<T> out;
+	out.clear();
+	typename std::vector<T>::const_iterator inIt;
+	typename std::vector<T>::iterator outIt;
+	for (inIt=in.begin(); inIt!=in.end(); inIt++) {
+		outIt = out.begin();
+		while (outIt != out.end() && *(outIt) < *(inIt)) {
+			++outIt;
+		}
+		out.insert(outIt,*(inIt));
+	}
+	if (in.size() != out.size()) {
+		REPORT_ERROR("Sort error! Vectors not the same size!");
+	}
+	return out;
+}
+
+template <class T> 
+vector<T> duplicateElimination(const vector<T> &in) {
+	vector<T> out;
+	out.clear();
+	typename std::vector<T>::const_iterator inIt;
+	typename std::vector<T>::iterator outIt;
+	for (inIt=in.begin(); inIt!=in.end(); inIt++) {
+		if (!has(out,*inIt)) {
+			out.push_back(*inIt);
+		}
+	}
+	return out;
+}
+
+template <class T> 
+vector<T> Helper::concat(const vector<T> & a, const vector<T> & b) {
+	vector<T> out;
+	out.clear();
+	typename std::vector<T>::const_iterator inIt;
+	for (inIt=a.begin(); inIt!=a.end(); inIt++) {
+		out.push_back(*inIt);	
+	}
+	for (inIt=b.begin(); inIt!=b.end(); inIt++) {
+		out.push_back(*inIt);	
+	}
+	return out;
+}
+
+template <class T> 
+vector<T> Helper::merge(const vector<T> & a, const vector<T> & b) {
+	return duplicateElimination(concat(a,b));
+}
+
+/*
+template <class T>
+vector<T> Helper::sort(const vector<T> & in) {
+	// TODO: Reimplement using insertion sort
+	// use insert-method of vector
+	vector<int> done;
+	vector<T> out;
+	for (unsigned i=0; i<in.size(); i++) {
+		int least = 0;
+		while (has(done,least)) {
+			least++;
+		}
+		for (int ii=0; ii<in.size(); ii++) {
+			if (in.at(ii) < in.at(least) && !has(done,ii)) {
+				least = ii;
+			}
+		}
+		out.push_back(in.at(least));
+		done.push_back(least);
+	}
+	if (in.size() != out.size()) {
+		REPORT_ERROR("Sort error! Vectors not the same size!");
+	}
+	return out;
+}
+*/
+
+/**
+ * Checks if the two given vectors are of equal size.
+ * If not an error message is printed to std::err.
+ */
+template <class T>
+void Helper::checkSize(const vector<T> & vec1, const vector<T> & vec2) {
+	if (vec1.size() != vec2.size()) {
+		cerr << "Vectors not of equal size: " << vec1.size() << " != " << vec2.size() << endl;
+	}
+}
+
+/**
+ * Returns the difference vector of the two given vectors.
+ * result = vec1 - vec2
+ */
+template <class T>
+vector<T> Helper::vectorDifference(const vector<T> & vec1, const vector<T> & vec2) {
+	checkSize(vec1,vec2);
+	vector<T> out;
+	out.clear();
+	typename std::vector<T>::const_iterator it1;
+	typename std::vector<T>::const_iterator it2;
+	it2=vec2.begin();
+	for (it1=vec1.begin(); it1!=vec1.end(); ++it1) {
+		if (it2==vec2.end()) {
+			cerr << "Vector 2 too short!" << endl;
+		}
+		out.push_back(*it1 - *it2);
+		++it2;
+	}
+	checkSize(vec1,out);
+	return out;
+}
+
+/**
+ * Returns the sum vector of the two given vectors.
+ * result = vec1 + vec2
+ */
+template <class T>
+vector<T> Helper::vectorSum(const vector<T> & vec1, const vector<T> & vec2) {
+	checkSize(vec1,vec2);
+	vector<T> out;
+	out.clear();
+	typename std::vector<T>::const_iterator it1;
+	typename std::vector<T>::const_iterator it2;
+	it2=vec2.begin();
+	for (it1=vec1.begin(); it1!=vec1.end(); ++it1) {
+		if (it2==vec2.end()) {
+			cerr << "Vector 2 too short!" << endl;
+		}
+		out.push_back(*it1 + *it2);
+		++it2;
+	}
+	checkSize(vec1,out);
+	return out;
+}
+
+/**
+ * Returns the length of the given vector.
+ */
+template <class T>
+float Helper::vectorLength(const vector<T> & vec) {
+	float out = 0;
+	typename std::vector<T>::const_iterator it;
+	for (it=vec.begin(); it!=vec.end(); ++it) {
+		out += pow(static_cast<double>(*it),2);
+	}
+	out = sqrt(out);
+	return out;
+}
+
+/**
+ * Normalizes the given vector to the length 1.
+ */
+template <class T>
+vector<double> Helper::normalize(const vector<T> & vec) {
+	vector<double> out;
+	out.clear();
+	typename std::vector<T>::const_iterator it;
+	float len = vectorLength(vec);
+	for (it=vec.begin(); it!=vec.end(); ++it) {
+		out.push_back(*it/len);
+	}
+	return out;
+}
+
+/**
+ * Returns the scalar product of the two given vectors.
+ */
+template <class T>
+float Helper::scalarProduct(const vector<T> & vec1, const vector<T> & vec2) {
+	checkSize(vec1,vec2);
+	float out = 0;
+	typename std::vector<T>::const_iterator it1;
+	typename std::vector<T>::const_iterator it2;
+	it2=vec2.begin();
+	for (it1=vec1.begin(); it1!=vec1.end(); ++it1) {
+		if (it2==vec2.end()) {
+			cerr << "Vector 2 too short!" << endl;
+		}
+		out += (*it1) * (*it2);
+		++it2;
+	}
+	return out;
+	// return vec1.x*vec2.x + vec1.y*vec2.y + vec1.z*vec2.z; // scalar product
+}
+
+/**
+ * Returns the angle between the two vectors.
+ * We assume all components of vec1 always to be positive.
+ * Works only for outputs in the range of 0..PI.
+ * There is no signum set.
+ */
+template <class T>
+float Helper::angleBetweenVectors(const vector<T> & vec1, const vector<T> & vec2) {
+	checkSize(vec1,vec2);
+	float len1 = vectorLength(vec1); // sqrt(pow(vec1.x,2)+pow(vec1.y,2)+pow(vec1.z,2));
+	float len2 = vectorLength(vec2); // sqrt(pow(vec2.x,2)+pow(vec2.y,2)+pow(vec2.z,2));
+	float scaP = scalarProduct(vec1,vec2); // vec1.x*vec2.x + vec1.y*vec2.y + vec1.z*vec2.z; // scalar product
+	float ang  = acos(scaP/(len1*len2)); // angle
+	return ang;
+}
+
+/**
+ * Prints the given vector to standard output.
+ */
+template <class T>
+void Helper::print(const vector<T> & vec) {
+	typename std::vector<T>::const_iterator it;
+	for (it=vec.begin(); it!=vec.end(); ++it) {
+		cout << *it << "; ";
+	}
+	cout << endl;
+}
+
+/**
+ * Prints the given vector in a string.
+ */
+template <class T>
+string Helper::toString(const vector<T> & vec) {
+	typename std::vector<T>::const_iterator it;
+	string str;
+	str.clear();
+	string tmp;
+	tmp.clear();
+	for (it=vec.begin(); it!=vec.end(); ++it) {
+		convert(*it,tmp);
+		str += tmp;
+		str += "; ";
+	}
+	return str;
+}
+
+template <class T>
+bool Helper::equal(const vector<T> & vec1, const vector<T> & vec2) {
+	checkSize(vec1,vec2);
+	bool out = true;
+	typename std::vector<T>::const_iterator it1;
+	typename std::vector<T>::const_iterator it2;
+	it2=vec2.begin();
+	for (it1=vec1.begin(); it1!=vec1.end(); ++it1) {
+		if (it2==vec2.end()) {
+			cerr << "Vector 2 too short!" << endl;
+		}
+		if ((*it1) != (*it2)) {
+			out = false;
+		}
+		++it2;
+	}
+	return out;
+}
+
+/**
+ * Prints the given vector in a string using a fixed number of spaces per float.
+ */
+template <class T>
+string Helper::inRow(const vector<T> & vec) {
+	typename std::vector<T>::const_iterator it;
+	string str;
+	str.clear();
+	string tmp;
+	tmp.clear();
+	for (it=vec.begin(); it!=vec.end(); ++it) {
+		str += inRow(*it);
+		str += ";";
+	}
+	return str;
+}
+
+

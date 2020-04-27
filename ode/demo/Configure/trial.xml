@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<File Name="trial.xml">
+    <Data Name="activities" Num="0">
+        <Definition>
+            <String Val="steps" />
+            <String Val="slope up" />
+            <String Val="steps down" />
+            <String Val="steps up" />
+            <String Val="slope down" />
+            <String Val="elevator" />
+            <String Val="bicycle" />
+            <String Val="sprint" />
+            <String Val="jogging" />
+        </Definition>
+        <Numbers />
+    </Data>
+    <Data Name="filename" Num="0">
+        <Definition>
+            <String Val="trial_" />
+        </Definition>
+        <Numbers />
+    </Data>
+    <Data Name="file extension" Num="0">
+        <Definition>
+            <String Val=".csv" />
+        </Definition>
+        <Numbers />
+    </Data>
+</File>

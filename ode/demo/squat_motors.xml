@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<File Name="motors.xml">
+    <Data Name="LeftAnkle" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right ankle joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="300" />
+            <Int Num="8" />
+            <Int Num="10" />
+            <Int Num="301" />
+            <Int Num="500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="LeftKnee" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right knee joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="450" />
+            <Int Num="10" />
+            <Int Num="-10" />
+            <Int Num="451" />
+            <Int Num="500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="RightAnkle" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right ankle joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="300" />
+            <Int Num="8" />
+            <Int Num="10" />
+            <Int Num="301" />
+            <Int Num="500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="RightKnee" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right knee joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="450" />
+            <Int Num="10" />
+            <Int Num="-10" />
+            <Int Num="451" />
+            <Int Num="500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="StartUp" Num="0">
+        <Definition>
+            <String Val="How many frames should the simulation wait " />
+            <String Val="until the replay of this file begins." />
+        </Definition>
+        <Numbers>
+            <Int Num="1200" />
+        </Numbers>
+    </Data>
+    <Data Name="TimeFrame" Num="0">
+        <Definition>
+            <String Val="How many frames does" />
+            <String Val="until the replay of this file begins." />
+        </Definition>
+        <Numbers>
+            <Int Num="600" />
+        </Numbers>
+    </Data>
+    <Data Name="CameraZ" Num="0">
+        <Definition>
+            <String Val="Camera height in percent of height one." />
+        </Definition>
+        <Numbers>
+            <Int Num="100" />
+        </Numbers>
+    </Data>
+    <Data Name="RotationSpeed" Num="0">
+        <Definition>
+            <String Val="RotationSpeed (0 means disabled)" />
+        </Definition>
+        <Numbers>
+            <Int Num="50" />
+        </Numbers>
+    </Data>
+    <Data Name="CameraRadius" Num="0">
+        <Definition>
+            <String Val="CameraRadius" />
+        </Definition>
+        <Numbers>
+            <Int Num="6" />
+        </Numbers>
+    </Data>
+</File>

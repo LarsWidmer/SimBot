@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<File Name="config.xml">
+    <Data Name="IDs" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="123" />
+            <Int Num="125" />
+        </Numbers>
+    </Data>
+    <Data Name="ID index" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="0" />
+        </Numbers>
+    </Data>
+    <Data Name="number of takes" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="3" />
+        </Numbers>
+    </Data>
+    <Data Name="sensor data indices" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="5" />
+            <Int Num="6" />
+            <Int Num="7" />
+            <Int Num="13" />
+            <Int Num="14" />
+        </Numbers>
+    </Data>
+    <Data Name="energy frame size" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="5" />
+        </Numbers>
+    </Data>
+    <Data Name="number of roggen sensors" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="2" />
+        </Numbers>
+    </Data>
+    <Data Name="verbose" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="1" />
+        </Numbers>
+    </Data>
+    <Data Name="sensor format" Num="0">
+        <Definition>
+            <String Val="DX5;ccsss-s-s-ssssss" />
+        </Definition>
+        <Numbers />
+    </Data>
+    <Data Name="sensor devices" Num="0">
+        <Definition>
+            <String Val="/dev/rfcomm0" />
+            <String Val="/dev/rfcomm1" />
+        </Definition>
+        <Numbers />
+    </Data>
+    <Data Name="number of window chunks" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="2" />
+        </Numbers>
+    </Data>
+    <Data Name="number of classifications" Num="0">
+        <Definition />
+        <Numbers>
+            <Int Num="6" />
+        </Numbers>
+    </Data>
+    <Data Name="classification names" Num="0">
+        <Definition>
+            <String Val="left" />
+            <String Val="right" />
+            <String Val="jump" />
+            <String Val="fire" />
+            <String Val="duck" />
+        </Definition>
+        <Numbers />
+    </Data>
+</File>

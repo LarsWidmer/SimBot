@@ -1,0 +1,225 @@
+<?xml version="1.0" ?>
+<File Name="motors.xml">
+    <Data Name="-LeftAnkle" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the left ankle joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="25" />
+            <Int Num="30" />
+            <Int Num="100" />
+            <Int Num="100" />
+            <Int Num="50" />
+            <Int Num="70" />
+            <Int Num="100" />
+            <Int Num="-100" />
+        </Numbers>
+    </Data>
+    <Data Name="-LeftKnee" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the left knee joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="10" />
+            <Int Num="30" />
+            <Int Num="50" />
+            <Int Num="-50" />
+            <Int Num="50" />
+            <Int Num="65" />
+            <Int Num="50" />
+            <Int Num="50" />
+        </Numbers>
+    </Data>
+    <Data Name="-RightAnkle" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right ankle joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="125" />
+            <Int Num="130" />
+            <Int Num="100" />
+            <Int Num="100" />
+            <Int Num="150" />
+            <Int Num="170" />
+            <Int Num="100" />
+            <Int Num="-100" />
+        </Numbers>
+    </Data>
+    <Data Name="-RightKnee" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right knee joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="110" />
+            <Int Num="130" />
+            <Int Num="50" />
+            <Int Num="-50" />
+            <Int Num="150" />
+            <Int Num="165" />
+            <Int Num="50" />
+            <Int Num="50" />
+        </Numbers>
+    </Data>
+    <Data Name="1LeftAnkle" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the left ankle joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="300" />
+            <Int Num="8" />
+            <Int Num="10" />
+            <Int Num="301" />
+            <Int Num="450" />
+            <Int Num="10" />
+            <Int Num="0" />
+            <Int Num="451" />
+            <Int Num="600" />
+            <Int Num="8" />
+            <Int Num="-10" />
+            <Int Num="601" />
+            <Int Num="700" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+            <Int Num="701" />
+            <Int Num="1500" />
+            <Int Num="10" />
+            <Int Num="0" />
+        </Numbers>
+    </Data>
+    <Data Name="1LeftKnee" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the left knee joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="450" />
+            <Int Num="10" />
+            <Int Num="-10" />
+            <Int Num="451" />
+            <Int Num="600" />
+            <Int Num="10" />
+            <Int Num="10" />
+            <Int Num="601" />
+            <Int Num="700" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+            <Int Num="701" />
+            <Int Num="1500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="LeftAnkle" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right ankle joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="300" />
+            <Int Num="8" />
+            <Int Num="10" />
+            <Int Num="301" />
+            <Int Num="500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="LeftKnee" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right knee joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="450" />
+            <Int Num="10" />
+            <Int Num="-10" />
+            <Int Num="451" />
+            <Int Num="500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="RightAnkle" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right ankle joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="300" />
+            <Int Num="8" />
+            <Int Num="10" />
+            <Int Num="301" />
+            <Int Num="500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="RightKnee" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right knee joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="0" />
+            <Int Num="450" />
+            <Int Num="10" />
+            <Int Num="-10" />
+            <Int Num="451" />
+            <Int Num="500" />
+            <Int Num="10" />
+            <Int Num="0" />            		
+        </Numbers>
+    </Data>
+    <Data Name="Comments" Num="0">
+        <Definition>
+            <String Val="For every joint there's a data section!" />
+            <String Val="The values always have the following order: " />
+            <String Val="Starting frame" />
+            <String Val="Ending frame" />
+            <String Val="Maxiumum force to use in the Joint" />
+            <String Val="Desired velocity of the joint" />
+            <String Val="These four items can be put multiple times for each joint" />
+        </Definition>
+        <Numbers />
+    </Data>
+    <Data Name="StartUp" Num="0">
+        <Definition>
+            <String Val="How many frames should the simulation wait " />
+            <String Val="until the replay of this file begins." />
+        </Definition>
+        <Numbers>
+            <Int Num="1200" />
+        </Numbers>
+    </Data>
+    <Data Name="TimeFrame" Num="0">
+        <Definition>
+            <String Val="How many frames does" />
+            <String Val="until the replay of this file begins." />
+        </Definition>
+        <Numbers>
+            <Int Num="600" />
+        </Numbers>
+    </Data>
+    <Data Name="-LeftHip" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the left hip joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="110" />
+            <Int Num="190" />
+            <Int Num="1" />
+            <Int Num="0" />
+        </Numbers>
+    </Data>
+    <Data Name="-RightHip" Num="0">
+        <Definition>
+            <String Val="Start, Stop, Fmax (%) and Velocity (%) (all repeating) for the Right hip joint." />
+        </Definition>
+        <Numbers>
+            <Int Num="10" />
+            <Int Num="90" />
+            <Int Num="1" />
+            <Int Num="0" />
+        </Numbers>
+    </Data>
+</File>

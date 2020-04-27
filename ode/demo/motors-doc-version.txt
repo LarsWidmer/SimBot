@@ -1,0 +1,138 @@
+// ********************************************************
+Ankle:
+
+Label WAITING_KNEE
+	Relax 1
+Jump WAITING_KNEE Until knee-ext-forw
+
+Extend 35 // common kick off with both feet
+
+left_Set ready-to-lift
+Label LEFT_KICKOFF
+	Extend 1
+Jump LEFT_KICKOFF Until Not LeftFootGround
+
+Extend 23 // "after-burner"
+
+left_Flex 30
+right_Relax 90
+
+left_Set ready-to-extend-left-knee
+left_Flex 10
+
+left_Set kicked-off
+left_Relax 85
+
+Label WAIT_STEP
+	left_Extend 1
+	right_Flex 1
+Jump WAIT_STEP Until ready-for-left-kickoff
+
+left_Extend 70
+right_Flex 50
+
+right_Set ready-to-extend-right
+right_Relax 20
+
+left_Set left-foot-extension-done
+Relax 20
+
+left_Flex 50
+
+Label FINAL_LOOP
+	Relax 1
+Jump FINAL_LOOP
+
+// ********************************************************
+Knee:
+
+Extend 49 // preextend
+
+Label EXTENDING
+	Relax 1 // coast down a bit
+Jump EXTENDING Until LeftKneeExtended
+
+Block 110 // keep legs straight
+
+left_Set knee-ext-forw
+Label BLOCKING
+	Block 1 // block knee to kick off, delay lifting leg
+Jump BLOCKING Until ready-to-lift
+
+Label KICKOFF // lift left leg, continue to kick off with right leg
+	left_Flex 1
+	right_Extend 1
+Jump KICKOFF Until ready-to-extend-left-knee
+
+Label EXTENDING_LEFT
+	left_Extend 1 // touch downwards
+	right_Flex 1
+Jump EXTENDING_LEFT Until LeftFootGround
+
+left_Extend 17 // carrie body weight
+right_Flex 17 
+
+Label PASSIVE_EXT_LEFT
+	left_Relax 1
+	right_Block 1
+Jump PASSIVE_EXT_LEFT Until LeftKneeExtended
+
+left_Set ready-for-left-kickoff
+Label WAIT_TO_STEP
+	Block 1
+Jump WAIT_TO_STEP Until ready-to-extend-right
+
+Label EXTENDING_RIGHT
+	left_Block 1
+	right_Extend 1
+Jump EXTENDING_RIGHT Until RightFootGround
+
+left_Block 5
+right_Extend 50
+
+left_Flex 45
+
+Label FINAL_LOOP
+	Relax 1
+Jump FINAL_LOOP
+
+// ********************************************************
+Hip: 
+
+Label WAITING_ONE
+	Relax 1
+Jump WAITING_ONE Until ready-to-lift
+
+Relax 20
+
+Flex 5 // keep upper body upright
+
+Label WAITING_TWO
+	Relax 1
+Jump WAITING_TWO Until ready-to-extend-left-knee
+
+left_Flex 10 // take a step
+right_Extend 10
+
+Label WAITING_THREE
+	Relax 1
+Jump WAITING_THREE Until LeftFootGround
+
+Flex 5 // keep upper body upright
+
+left_Extend 80 // take a step
+right_Flex 80
+
+Label WAIT_TO_STEP
+	Relax 1
+Jump WAIT_TO_STEP Until left-foot-extension-done
+
+Flex 10 // keep upper body upright
+
+left_Flex 20 // take a step
+right_Extend 20
+
+Label FINAL_LOOP
+	Relax 1
+Jump FINAL_LOOP
+
